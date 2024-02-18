@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="span__search">
+        <span>Digite o nome ou id do pokemon</span>
+    </div>
+    <input type="text" (input)="getPokemon($any($event.target).value)">
+    
+    <div class="card__title">
+        <h3>{{ pokemon.name }}</h3>
+    </div>
+
+    <div class="card__body">
+        <img [src]="pokemon.sprites.front_default" alt="pokemon" srcset="">
+    </div>
+
+    <div class="card__stats">
+        <span class="card__stats__type" 
+        *ngFor="let t of pokemon.types">
+            {{ t.type.name }}            
+        </span>     
+
+    </div>
+</div>
